@@ -1,0 +1,60 @@
+top 5 by native:
+	Mandarin
+	Spanish
+	Hindustani
+	English
+	Arabic
+
+top 10 by native / >100mil native:
+	Mandarin
+	Spanish
+	Hindustani
+	English
+	Arabic
+	Portuguese
+	Bengali
+	Russian
+	Japanese
+	Punjabi
+
+T5:
+	Mandarin
+	English
+	Hindustani
+	Spanish
+	Russian
+
+top 10 by total:
+	Mandarin
+	English
+	Hindustani
+	Spanish
+	Russian
+	Arabic
+	Portuguese
+	Bengali
+	French
+	Malay
+
+>100mil total:
+	Mandarin
+	English
+	Hindustani
+	Spanish
+	Russian
+	Arabic
+	Portuguese
+	Bengali
+	French
+	Malay
+	German
+	Japanese
+	Persian
+	Punjabi
+
+top 5 families: (top native, top total)
+	Indo-European	Spanish		English
+	Sino-Tibetan	Mandarin	Mandarin
+	Niger-Congo		Yoruba		Swahili
+	Afro-Asiatic	Arabic		Arabic
+	Austronesian	Javanese	Malay
