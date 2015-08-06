@@ -2,7 +2,7 @@
 from distance import *
 from collections import defaultdict
 from GA import GA
-import random
+import random, math
 
 # Native speaker counts from Nationalencyklopedin
 # Total speaker counts from Ethnologue
@@ -143,6 +143,8 @@ hi = {
 	'-PL': {'on': 1},
 	'-GEN': {'ka': 1, 'ke': 1, 'ki': 1},
 	'NEG': {'nain': 1, 'na': 1, 'mat': 1},
+	'and': {'aur': 1},
+	'or': {'wa': 1},
 	'zero': {'syunya': 1, 'sipar': 1},
 	'one': {'ek': 1},
 	'two': {'do': 1},
@@ -217,3 +219,24 @@ def mut(s):
 		char = random.choice('mpbntdsrkgywieaou')
 		chars[index] = char
 	return str.join('', chars)
+
+class weight(object):
+	native = lambda x: x['#native']
+	total = lambda x: x['#total']
+	family = lambda x: x['#family']
+	const = lambda x: 1
+
+def gen_words(langs, words, weightFunc, popsize, generations, mutationProb):
+	out = {}
+	for word in words:
+		fitness = getFitnessFunction(langs, word, weightFunc)
+		population = []
+		for l in langs:
+			for wd, wt in l[word].items():
+				population.append(wd)
+		popfactor = math.ceil(popsize/len(population))
+		ga = GA(population * popfactor, fitness, rs, rep, mutationProb, mut)
+		ga.run(generations)
+		sortedPop = sorted(ga.population, key=fitness, reverse=True)
+		out[word] = list(zip(sortedPop, map(fitness, sortedPop)))
+	return out
