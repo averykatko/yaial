@@ -158,6 +158,36 @@ es = {
 	'ten': {'dyes': 1},
 	}
 
+fr = {
+	'#native': 74,
+	'#total': 163,
+	'#family': 2914, # Indo-European
+	'human': {'yumen': 1},
+	'child': {'anpan': 1},
+	'big': {'gran': 1, 'grand': 1},
+	'small': {'pati': 1, 'patit': 1},
+	'water': {'o': 1},
+	'1s': {'sya': 1, 'ma': 1, 'mwa': 1},
+	'2s': {'tyu': 1, 'ta': 1, 'twa': 1, 'bu': 1},
+	'3s': {'ir': 1, 'er': 1, 'ra': 1, 'rwi': 1},
+	'-PL': {'s': 1},
+	'-GEN': {},
+	'NEG': {'na': 1, 'pa': 1},
+	'and': {'e': 1},
+	'or': {'u': 1},
+	'zero': {'sero': 1},
+	'one': {'en': 1},
+	'two': {'dyo': 1},
+	'three': {'trwa': 1},
+	'four': {'katr': 1},
+	'five': {'senk': 1},
+	'six': {'sis': 1},
+	'seven': {'set': 1},
+	'eight': {'wit': 1},
+	'nine': {'nyop': 1},
+	'ten': {'dis': 1},
+	}
+
 hi = {
 	'#native': 376, # Hindi + Urdu
 	'#total': 538, # Hindi + Urdu
@@ -216,6 +246,66 @@ ja = {
 	'eight': {'hati': 1, 'ya': 1},
 	'nine': {'ku': 1, 'kyu': 1, 'kono': 1},
 	'ten': {'so': 1, 'to': 1},
+	}
+
+jv = {
+	'#native': 82,
+	'#total': 84,
+	'#family': 323, # Austronesian
+	'human': {'manunsa': 1},
+	'child': {'anak': 1}, #??
+	'big': {'gede': 1},
+	'small': {'tyilik': 1, 'arit': 1},
+	'water': {'banyu': 1},
+	'1s': {'aku': 1, 'kura': 1, 'darem': 1},
+	'2s': {'kowe': 1, 'sampeyan': 1, 'pandyenenan': 1}, #????
+	'3s': {'deweke': 1, 'pandyenenanipun': 1}, #????
+	'-PL': {},
+	'-GEN': {},
+	'NEG': {'dudu': 1, 'ora': 1},
+	'and': {'ran': 1, 'sarta': 1},
+	'or': {}, #????
+	'zero': {'nor': 1},
+	'one': {'sidyi': 1, 'setungar': 1},
+	'two': {'roro': 1, 'kali': 1},
+	'three': {'telu': 1, 'tiga': 1},
+	'four': {'papat': 1, 'sekawan': 1},
+	'five': {'rima': 1, 'gansai': 1},
+	'six': {'enem': 1},
+	'seven': {'pitu': 1},
+	'eight': {'woru': 1},
+	'nine': {'sana': 1},
+	'ten': {'sepulu': 1, 'sedasa': 1},
+	}
+
+ms = {
+	'#native': 77,
+	'#total': 163,
+	'#family': 323, # Austronesian
+	'human': {'manusya': 1},
+	'child': {'ana': 1},
+	'big': {'basar': 1, 'raya': 1, 'gadan': 1},
+	'small': {'ketyir': 1},
+	'water': {'air': 1},
+	'1s': {'aku': 1, 'saya': 1},
+	'2s': {'kamu': 1, 'anda': 1},
+	'3s': {'ya': 1, 'dya': 1},
+	'-PL': {'an': 1}, #??
+	'-GEN': {},
+	'NEG': {'tida': 1},
+	'and': {'dan': 1},
+	'or': {'atau': 1},
+	'zero': {'koson': 1, 'sipar': 1, 'nor': 1, 'nier': 1},
+	'one': {'satu': 1, 'asa': 1, 'tungar': 1, 'eka': 1, 'aat': 1},
+	'two': {'dua': 1, 'dwi': 1},
+	'three': {'tiga': 1, 'teru': 1, 'tari': 1},
+	'four': {'ampat': 1, 'tyator': 1},
+	'five': {'rima': 1, 'pantya': 1},
+	'six': {'anam': 1},
+	'seven': {'tudyo': 1, 'pitu': 1, 'sapta': 1},
+	'eight': {'rapan': 1, 'sarapan': 1, 'asta': 1},
+	'nine': {'sambiran': 1, 'sarapan': 1, 'nawa': 1},
+	'ten': {'sapulo': 1, 'ekadasa': 1},
 	}
 
 pa = {
@@ -306,6 +396,66 @@ ru = {
 	'eight': {'wosim': 1},
 	'nine': {'dewit': 1},
 	'ten': {'desit': 1},
+	}
+
+sw = {
+	'#native': 26,
+	'#total': 150, # ????
+	'#family': 437, # Niger-Congo
+	'human': {'binadamu': 1},
+	'child': {'mtoto': 1, 'mwana': 1},
+	'big': {'kubwa': 1},
+	'small': {'dogo': 1},
+	'water': {'madyi': 1},
+	'1s': {'mimi': 1, 'ni': 1},
+	'2s': {'wewe': 1, 'u': 1, 'ku': 1},
+	'3s': {'yeye': 1, 'a': 1, 'yu': 1, 'm': 1},
+	'-PL': {},
+	'-GEN': {},
+	'NEG': {'i': 1},
+	'and': {'na': 1},
+	'or': {'au': 1},
+	'zero': {'sipuri': 1}, #????
+	'one': {'modya': 1, 'mosi': 1},
+	'two': {'wiri': 1, 'piri': 1},
+	'three': {'tatu': 1},
+	'four': {'nne': 1},
+	'five': {'tano': 1},
+	'six': {'sita': 1},
+	'seven': {'saba': 1},
+	'eight': {'nane': 1},
+	'nine': {'tisa': 1},
+	'ten': {'kumi': 1},
+	}
+
+yo = {
+	'#native': 28,
+	'#total': 19,
+	'#family': 437, # Niger-Congo
+	'human': {'omoniyan': 1, 'eniyan': 1},
+	'child': {'omo': 1, 'ewe': 1},
+	'big': {'nra': 1, 'tobi': 1, 'gborin': 1},
+	'small': {'kere': 1, 'die': 1},
+	'water': {'omi': 1},
+	'1s': {'emi': 1, 'mi': 1},
+	'2s': {'iwo': 1},
+	'3s': {'oun': 1, 'un': 1, 'o': 1},
+	'-PL': {},
+	'-GEN': {},
+	'NEG': {'ko': 1},
+	'and': {'ati': 1},
+	'or': {'tabi': 1},
+	'zero': {'odo': 1}, #????
+	'one': {'eni': 1, 'okan': 1},
+	'two': {'edyi': 1},
+	'three': {'eta': 1},
+	'four': {'erin': 1},
+	'five': {'arun': 1},
+	'six': {'epa': 1},
+	'seven': {'edye': 1},
+	'eight': {'edyo': 1},
+	'nine': {'esan': 1},
+	'ten': {'ewa': 1},
 	}
 
 def distance(w1, w2):
