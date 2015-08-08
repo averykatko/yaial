@@ -1,0 +1,34 @@
+human	uman	uman
+child	kinya	kinya
+big		rai		rai
+small	tya 	tya
+water	awa		awa
+1s		mi		mi
+2s		tu		tu
+3s		ra 		ra
+-PL		n		in
+-GEN	da		da
+NEG		na		na
+and		ai 		ai
+or		o		o
+zero	sir		siro
+one		un 		un
+two		do		do
+three	trin	tarin
+four	tyar	tyaro
+five	pan		pan
+six		sys		syesu
+seven	sei		sei
+eight	at		ato
+nine	noi		noi
+ten		des		desi
+100
+1000
+this
+that
+wh...
+COP
+QP
+love
+eat
+drink
