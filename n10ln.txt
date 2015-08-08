@@ -18,7 +18,7 @@ three	trin	tarin
 four	tyar	tyaro
 five	pan	pan
 six	sys	syesu
-seven	sei	sei
+seven	set	seti
 eight	at	ato
 nine	nob	nobe
 ten	des	desi
