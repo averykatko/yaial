@@ -20,7 +20,7 @@ five	pan	pan
 six	sys	syesu
 seven	sei	sei
 eight	at	ato
-nine	noi	noi
+nine	nob	nobe
 ten	des	desi
 100
 1000
