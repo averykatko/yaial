@@ -16,6 +16,9 @@ ar = {
 	'child': {'tipr': 1},
 	'big': {'kabir': 1},
 	'small': {'sagir': 1},
+	# 'old': {'kadim': 1, 'musin': 1},
+	# 'young': {},
+	# 'fire': {},
 	'water': {'ma': 1},
 	'1s': {'ana': 1},
 	'2s': {'anta': 1, 'anti': 1},
@@ -36,6 +39,8 @@ ar = {
 	'eight': {'tamaniya': 1},
 	'nine': {'ˈtisa': 1},
 	'ten': {'asyara': 1},
+	'hundred': {'mia': 1},
+	'thousand': {'arp': 1},
 }
 
 bn = {
@@ -46,6 +51,9 @@ bn = {
 	'child': {'syisyu': 1},
 	'big': {'boro': 1},
 	'small': {'tyoto': 1},
+	# 'old': {'purono': 1, 'probin': 1},
+	# 'young': {},
+	# 'fire': {},
 	'water': {'dyor': 1, 'pani': 1},
 	'1s': {'ami': 1, 'amake': 1},
 	'2s': {'tui': 1, 'tumi': 1, 'apni': 1, 'toke': 1, 'tomake': 1, 'apnake': 1},
@@ -66,6 +74,8 @@ bn = {
 	'eight': {'at': 1},
 	'nine': {'noe': 1},
 	'ten': {'dosy': 1},
+	'hundred': {'syata': 1, 'ekasy': 1},
+	'thousand': {'adyar': 1},
 	}
 
 cmn = {
@@ -76,6 +86,9 @@ cmn = {
 	'child': {'kaidyi': 1, 'artun': 1},
 	'big': {'da': 1, 'dai': 1, 'tai': 1},
 	'small': {'syau': 1},
+	# 'old': {'dyu': 1, 'rau': 1, 'gurau': 1},
+	# 'young': {},
+	# 'fire': {},
 	'water': {'swei': 1},
 	'1s': {'wo': 1},
 	'2s': {'ni': 1},
@@ -96,6 +109,8 @@ cmn = {
 	'eight': {'ba': 1},
 	'nine': {'dyou': 1},
 	'ten': {'ss': 1}, # ????
+	'hundred': {'bai': 1},
+	'thousand': {'tyen': 1},
 }
 
 en = {
@@ -106,6 +121,9 @@ en = {
 	'child': {'tyaird': 1, 'kid': 1},
 	'big': {'big': 1, 'rardy': 1, 'greit': 1},
 	'small': {'smar': 1, 'ritar': 1, 'taini': 1},
+	# 'old': {'ourd': 1},
+	# 'young': {'yon': 1},
+	# 'fire': {'pair': 1},
 	'water': {'watar': 1},
 	'1s': {'ai': 1, 'mi': 1},
 	'2s': {'yu': 1},
@@ -126,6 +144,8 @@ en = {
 	'eight': {'eit': 1},
 	'nine': {'nain': 1},
 	'ten': {'ten': 1},
+	'hundred': {'ondred': 1},
+	'thousand': {'tausand': 1},
 	}
 
 es = {
@@ -136,6 +156,9 @@ es = {
 	'child': {'ninyo': 1, 'ninya': 1, 'tyiko': 1, 'tyika': 1},
 	'big': {'grande': 1},
 	'small': {'pekenyo': 1, 'pekenya': 1, 'tyiko': 1, 'tyika': 1},
+	# 'old': {'kadim': 1, 'musin': 1},
+	# 'young': {},
+	# 'fire': {},
 	'water': {'agwa': 1},
 	'1s': {'dyo': 1, 'me': 1, 'mi': 1},
 	'2s': {'tu': 1, 'te': 1, 'ti': 1, 'bos': 1, 'usted': 1},
@@ -156,6 +179,8 @@ es = {
 	'eight': {'otyo': 1},
 	'nine': {'nwebe': 1},
 	'ten': {'dyes': 1},
+	'hundred': {'syen': 1, 'syento': 1},
+	'thousand': {'mir': 1},
 	}
 
 fr = {
@@ -186,6 +211,8 @@ fr = {
 	'eight': {'wit': 1},
 	'nine': {'nyop': 1},
 	'ten': {'dis': 1},
+	'hundred': {'san': 1},
+	'thousand': {'mir': 1},
 	}
 
 hi = {
@@ -216,6 +243,8 @@ hi = {
 	'eight': {'at': 1},
 	'nine': {'nau': 1},
 	'ten': {'das': 1},
+	'hundred': {'sau': 1, 'saikra': 1},
+	'thousand': {'asar': 1, 'saasr': 1},
 	}
 
 ja = {
@@ -246,6 +275,8 @@ ja = {
 	'eight': {'hati': 1, 'ya': 1},
 	'nine': {'ku': 1, 'kyu': 1, 'kono': 1},
 	'ten': {'so': 1, 'to': 1},
+	'hundred': {'yaku': 1},
+	'thousand': {'sen': 1},
 	}
 
 jv = {
@@ -276,6 +307,8 @@ jv = {
 	'eight': {'woru': 1},
 	'nine': {'sana': 1},
 	'ten': {'sepulu': 1, 'sedasa': 1},
+	'hundred': {'atus': 1},
+	'thousand': {'ewu': 1},
 	}
 
 ms = {
@@ -306,6 +339,8 @@ ms = {
 	'eight': {'rapan': 1, 'sarapan': 1, 'asta': 1},
 	'nine': {'sambiran': 1, 'sarapan': 1, 'nawa': 1},
 	'ten': {'sapulo': 1, 'ekadasa': 1},
+	'hundred': {'ratus': 1},
+	'thousand': {'ribu': 1},
 	}
 
 pa = {
@@ -336,6 +371,8 @@ pa = {
 	'eight': {'at': 1},
 	'nine': {'naun': 1},
 	'ten': {'das': 1},
+	'hundred': {'sau': 1},
+	'thousand': {'asar': 1},
 	}
 
 pt = {
@@ -366,6 +403,8 @@ pt = {
 	'eight': {'oitu': 1},
 	'nine': {'nobi': 1},
 	'ten': {'des': 1},
+	'hundred': {'sein': 1, 'sentu': 1},
+	'thousand': {'mir': 1},
 	}
 
 ru = {
@@ -396,6 +435,8 @@ ru = {
 	'eight': {'wosim': 1},
 	'nine': {'dewit': 1},
 	'ten': {'desit': 1},
+	'hundred': {'sto': 1, 'sotnya': 1},
+	'thousand': {'tisyatya': 1},
 	}
 
 sw = {
@@ -426,6 +467,8 @@ sw = {
 	'eight': {'nane': 1},
 	'nine': {'tisa': 1},
 	'ten': {'kumi': 1},
+	'hundred': {'mia': 1},
+	'thousand': {'erpu': 1},
 	}
 
 yo = {
@@ -456,18 +499,31 @@ yo = {
 	'eight': {'edyo': 1},
 	'nine': {'esan': 1},
 	'ten': {'ewa': 1},
+	'hundred': {'ogorun': 1},
+	'thousand': {'egberun': 1},
 	}
 
 def distance(w1, w2):
 	return edit_distance(w1, w2)
 
-def getFitnessFunction(langs, word, weightFunc):
+def getFitnessFunction(langs, word, weightFunc, avg=True):
+	if not avg:
+		return gff2(langs, word, weightFunc)
 	words = defaultdict(int)
 	for l in langs:
 		weightSum = sum([v for k,v in l[word].items()])
 		for wd,wt in l[word].items():
 			words[wd] += weightFunc(l) * wt/weightSum
 	return lambda w: -1 * sum([wt * distance(w, wd) for wd, wt in words.items()])
+
+def gff2(langs, word, weightFunc):
+	def ff(w):
+		cost = 0
+		for l in langs:
+			if len(l[word]) > 0:
+				cost += weightFunc(l) * min(map(lambda x: distance(w, x), l[word]))
+		return -1 * cost
+	return ff
 
 def rs(pop, fitness):
 	popFitnesses = list(map(fitness, pop))
@@ -526,10 +582,10 @@ class weight(object):
 	family = lambda x: x['#family']
 	const = lambda x: 1
 
-def gen_words(langs, words, weightFunc, popsize, generations, mutationProb):
+def gen_words(langs, words, weightFunc, popsize, generations, mutationProb, avg=True):
 	out = {}
 	for word in words:
-		fitness = getFitnessFunction(langs, word, weightFunc)
+		fitness = getFitnessFunction(langs, word, weightFunc, avg)
 		population = []
 		for l in langs:
 			for wd, wt in l[word].items():
@@ -539,6 +595,7 @@ def gen_words(langs, words, weightFunc, popsize, generations, mutationProb):
 		ga.run(generations)
 		sortedPop = sorted(ga.population, key=fitness, reverse=True)
 		out[word] = list(zip(sortedPop, map(fitness, sortedPop)))
+		print('best for %s: %s (fitness %f)' % (word, out[word][0][0], out[word][0][1]))
 	return out
 
 def pick_words(langs, words, weightFunc):
