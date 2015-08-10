@@ -22,8 +22,8 @@ seven	set	seti
 eight	at	ato
 nine	nob	nobe
 ten	des	desi
-100
-1000
+100	san	san
+1000	sar	sara
 this
 that
 wh...
