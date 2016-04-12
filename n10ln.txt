@@ -3,11 +3,15 @@ child	kinya	kinya
 big	rai	rai
 small	tya	tya
 water	awa	awa
+cat	iat	iatu
+dog	kar	karu
+woman	mura	mura
+man	man	man
 1s	mi	mi
-2s	tu	tu
+2s	ti	ti
 3s	ra	ra
--PL	n	in
--GEN	da	da
+-PL	an	an
+-GEN	i	i
 NEG	na	na
 and	ai	ai
 or	o	o
@@ -24,6 +28,7 @@ nine	nob	nobe
 ten	des	desi
 100	san	san
 1000	sar	sara
+-ORD	wa	wa
 this
 that
 wh...

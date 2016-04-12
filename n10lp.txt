@@ -1,0 +1,39 @@
+human	umana	umana
+child	ninya	ninya
+big	bari	bari
+small	tyota	tyota
+water	wada	wada
+cat	kat	katu
+dog	kaun	kaun
+woman	nari	nari
+man	man	man
+1s	mi	mi
+2s	ti	ti
+3s	ra	ra
+-PL	an	an
+-GEN	i	i
+NEG	na	na
+and	i	i
+or	wa	wa
+zero	siro	siro
+one	ik	ike
+two	do	do
+three	tin	tin
+four	tyar	tyaro
+five	paty	patyu
+six	ses	sese
+seven	sat	sati
+eight	at	ato
+nine	nau	nau
+ten	des	desi
+100	sau	sau
+1000	asar	asara
+-ORD	wa	wa
+this
+that
+wh...
+COP
+QP
+love
+eat
+drink

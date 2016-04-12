@@ -41,6 +41,7 @@ ar = {
 	'ten': {'asyara': 1},
 	'hundred': {'mia': 1},
 	'thousand': {'arp': 1},
+	'-ORD': {},
 }
 
 bn = {
@@ -76,6 +77,7 @@ bn = {
 	'ten': {'dosy': 1},
 	'hundred': {'syata': 1, 'ekasy': 1},
 	'thousand': {'adyar': 1},
+	'-ORD': {'om': 1},
 	}
 
 cmn = {
@@ -111,6 +113,7 @@ cmn = {
 	'ten': {'ss': 1}, # ????
 	'hundred': {'bai': 1},
 	'thousand': {'tyen': 1},
+	'-ORD': {},
 }
 
 en = {
@@ -146,6 +149,7 @@ en = {
 	'ten': {'ten': 1},
 	'hundred': {'ondred': 1},
 	'thousand': {'tausand': 1},
+	'-ORD': {'t': 1},
 	}
 
 es = {
@@ -181,6 +185,7 @@ es = {
 	'ten': {'dyes': 1},
 	'hundred': {'syen': 1, 'syento': 1},
 	'thousand': {'mir': 1},
+	'-ORD': {'to': 1, 'ta': 1, 'imo': 1, 'ima': 1, 'abo': 1, 'aba': 1, 'ero': 1, 'era': 1},
 	}
 
 fr = {
@@ -213,6 +218,7 @@ fr = {
 	'ten': {'dis': 1},
 	'hundred': {'san': 1},
 	'thousand': {'mir': 1},
+	'-ORD': {'yem': 1},
 	}
 
 hi = {
@@ -245,6 +251,7 @@ hi = {
 	'ten': {'das': 1},
 	'hundred': {'sau': 1, 'saikra': 1},
 	'thousand': {'asar': 1, 'saasr': 1},
+	'-ORD': {'wan': 1},
 	}
 
 ja = {
@@ -277,6 +284,7 @@ ja = {
 	'ten': {'so': 1, 'to': 1},
 	'hundred': {'yaku': 1},
 	'thousand': {'sen': 1},
+	'-ORD': {'me': 1},
 	}
 
 jv = {
@@ -309,6 +317,7 @@ jv = {
 	'ten': {'sepulu': 1, 'sedasa': 1},
 	'hundred': {'atus': 1},
 	'thousand': {'ewu': 1},
+	'-ORD': {},
 	}
 
 ms = {
@@ -341,6 +350,7 @@ ms = {
 	'ten': {'sapulo': 1, 'ekadasa': 1},
 	'hundred': {'ratus': 1},
 	'thousand': {'ribu': 1},
+	'-ORD': {},
 	}
 
 pa = {
@@ -373,6 +383,7 @@ pa = {
 	'ten': {'das': 1},
 	'hundred': {'sau': 1},
 	'thousand': {'asar': 1},
+	'-ORD': {'wa': 1}, #????
 	}
 
 pt = {
@@ -405,6 +416,7 @@ pt = {
 	'ten': {'des': 1},
 	'hundred': {'sein': 1, 'sentu': 1},
 	'thousand': {'mir': 1},
+	'-ORD': {'eiru': 1, 'eira': 1, 'tu': 1, 'ta': 1, 'abu': 1, 'aba': 1, 'imu': 1, 'ima': 1},
 	}
 
 ru = {
@@ -437,6 +449,7 @@ ru = {
 	'ten': {'desit': 1},
 	'hundred': {'sto': 1, 'sotnya': 1},
 	'thousand': {'tisyatya': 1},
+	'-ORD': {'ii': 1, 'oi': 1},
 	}
 
 sw = {
@@ -469,6 +482,7 @@ sw = {
 	'ten': {'kumi': 1},
 	'hundred': {'mia': 1},
 	'thousand': {'erpu': 1},
+	'-ORD': {},
 	}
 
 yo = {
@@ -501,6 +515,7 @@ yo = {
 	'ten': {'ewa': 1},
 	'hundred': {'ogorun': 1},
 	'thousand': {'egberun': 1},
+	'-ORD': {},
 	}
 
 def distance(w1, w2):
@@ -598,11 +613,11 @@ def gen_words(langs, words, weightFunc, popsize, generations, mutationProb, avg=
 		print('best for %s: %s (fitness %f)' % (word, out[word][0][0], out[word][0][1]))
 	return out
 
-def pick_words(langs, words, weightFunc):
+def pick_words(langs, words, weightFunc, avg=True):
 	out = {}
 	for word in words:
 		candidates = []
-		fitness = getFitnessFunction(langs, word, weightFunc)
+		fitness = getFitnessFunction(langs, word, weightFunc, avg)
 		for l in langs:
 			for wd, wt in l[word].items():
 				candidates.append(wd)
