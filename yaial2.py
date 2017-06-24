@@ -2,6 +2,7 @@
 from distance import *
 from collections import defaultdict
 from GA import GA
+from py_common_subseq import *
 import random, math
 
 # Native speaker counts from Nationalencyklopedin
@@ -12,20 +13,22 @@ ar = {
 	'#native': 295,
 	'#total': 452,
 	'#family': 381, # Afro-Asiatic
-	'human': {'insan': 1, 'basyar': 1},
-	'child': {'tipr': 1},
+	'human': {'insan': 428+392, 'basyar': 2032+400, 'nas': 19014+1048},
+	'child': {'tipr': 4361+4252, 'ibn': 3181+252, 'sabiy': 745+474, 'syab': 1825+1353, 'adat': 19873+522},
+	'woman': {'imraa': 2544, 'maraa': 3140, 'nisa': 3517+762},
+	'man': {'radyur': 33463+21381, 'mar': 0, 'imru': 0},
 	'big': {'kabir': 1},
 	'small': {'sagir': 1},
-	# 'old': {'kadim': 1, 'musin': 1},
-	# 'young': {},
-	# 'fire': {},
+	'old': {'kadim': 0, 'musin': 87+68, 'adyus': 2388+1084},
+	'young': {'sagir': 957+503, 'adat': 19873+522, 'syab': 1825+1353},
+	'fire': {'arik': 0, 'nar': 7991+919},
 	'water': {'ma': 1},
 	'1s': {'ana': 1},
-	'2s': {'anta': 1, 'anti': 1},
-	'3s': {'uwa': 1, 'iya': 1},
+	'2s': {'anta': 149124/2, 'anti': 149124/2},
+	'3s': {'uwa': 111754, 'iya': 58429+41118},
 	'-PL': {'un': 1, 'in': 1},
 	'-GEN': {'i': 1, 'in': 1},
-	'NEG': {'ra': 1, 'ma': 1, 'ram': 1, 'ran': 1, 'raisa': 1},
+	'NEG': {'ra': 493566, 'ma': 218700, 'ram': 136193, 'ran': 61345, 'raisa': 0, 'rastu': 23413/3, 'rasta': 23413/3, 'rasti': 23413/3, 'misy': 787},
 	'and': {'wa': 1},
 	'or': {'au': 1},
 	'zero': {'sepr': 1},
@@ -35,7 +38,7 @@ ar = {
 	'four': {'arbaa': 1},
 	'five': {'kamsa': 1},
 	'six': {'sita': 1},
-	'seven': {'ˈsaba': 1},
+	'seven': {'saba': 1},
 	'eight': {'tamaniya': 1},
 	'nine': {'ˈtisa': 1},
 	'ten': {'asyara': 1},
@@ -84,25 +87,27 @@ cmn = {
 	'#native': 955,
 	'#total': 1026,
 	'#family': 1268, # Sino-Tibetan
-	'human': {'sen': 1},
-	'child': {'kaidyi': 1, 'artun': 1},
-	'big': {'da': 1, 'dai': 1, 'tai': 1},
+	'human': {'san': 31382},
+	'child': {'kaidyi': 4857, 'artun': 0, 'tun': 335, 'dyi': 8976, 'syaukai': 908, 'syaukaidyi': 148, 'syauponyou': 141},
+	'woman': {'nwi': 1782, 'nwisyin': 191, 'nwida': 199, 'nwisan': 2718, 'gunyan': 364, 'nyan': 355, 'nwisi': 1364, 'punwi': 0, 'pu': 360, 'nwidyi': 148, 'nwison': 158, 'saunwi': 48, 'nwikai': 1913, 'nwikaidyi': 216},
+	'man': {'nan': 523, 'nansyin': 110, 'nansan': 2214, 'nandyi': 148, 'nandyikan': 0, 'nanda': 156},
+	'big': {'da': 9780, 'dasyin': 57},
 	'small': {'syau': 1},
-	# 'old': {'dyu': 1, 'rau': 1, 'gurau': 1},
-	# 'young': {},
-	# 'fire': {},
+	'old': {'dyou': 437, 'rau': 3203, 'gurau': 99},
+	'young': {'nyentyin': 10},
+	'fire': {'kwo': 1852, 'kwodyai': 0},
 	'water': {'swei': 1},
 	'1s': {'wo': 1},
 	'2s': {'ni': 1},
 	'3s': {'ta': 1},
 	'-PL': {'man': 1},
 	'-GEN': {'da': 1},
-	'NEG': {'bu': 1, 'mei': 1, 'meiyou': 1},
-	'and': {'ko': 1, 'wi': 1, 'yidyi': 1},
-	'or': {'kwo': 1, 'kwodyo': 1},
+	'NEG': {'bu': 46776, 'mei': 29175, 'meiyou': 0},
+	'and': {'ko': 20164, 'wi': 2608, 'yidyi': 488},
+	'or': {'kwo': 2265, 'kwodyo': 1771},
 	'zero': {'rin': 1},
 	'one': {'yi': 1},
-	'two': {'ar': 1, 'ryan': 1},
+	'two': {'ar': 999, 'ryan': 2670},
 	'three': {'san': 1},
 	'four': {'si': 1},
 	'five': {'wu': 1},
@@ -110,7 +115,7 @@ cmn = {
 	'seven': {'tyi': 1},
 	'eight': {'ba': 1},
 	'nine': {'dyou': 1},
-	'ten': {'ss': 1}, # ????
+	'ten': {'si': 1}, # ????
 	'hundred': {'bai': 1},
 	'thousand': {'tyen': 1},
 	'-ORD': {},
@@ -120,23 +125,23 @@ en = {
 	'#native': 360,
 	'#total': 841,
 	'#family': 2914, # Indo-European
-	'human': {'yuman': 1},
-	'child': {'tyaird': 1, 'kid': 1},
-	'big': {'big': 1, 'rardy': 1, 'greit': 1},
-	'small': {'smar': 1, 'ritar': 1, 'taini': 1},
-	# 'old': {'ourd': 1},
-	# 'young': {'yon': 1},
-	# 'fire': {'pair': 1},
+	'human': {'yuman': 21440, 'parsan': 31433},
+	'child': {'tyaird': 34125, 'kid': 42100},
+	'big': {'big': 92052, 'rardy': 7502, 'greit': 112540, 'yudy': 8016, 'dyaiant': 3753},
+	'small': {'smar': 23673, 'ritar': 187619, 'taini': 5386},
+	'old': {'ourd': 1},
+	'young': {'yon': 1},
+	'fire': {'pair': 1},
 	'water': {'watar': 1},
-	'1s': {'ai': 1, 'mi': 1},
+	'1s': {'ai': 5685306, 'mi': 1444168},
 	'2s': {'yu': 1},
-	'3s': {'i': 1, 'syi': 1, 'it': 1, 'dei': 1},
+	'3s': {'i': 1159154, 'syi': 537022, 'it': 2879962, 'dei': 664611, 'im': 533812, 'ar': 417920, 'dem': 297126},
 	'-PL': {'s': 1, 'is': 1},
 	'-GEN': {'s': 1, 'is': 1},
-	'NEG': {'nat': 1, 'dount': 1},
+	'NEG': {'nat': 864776, 'dount': 928842},
 	'and': {'and': 1},
 	'or': {'or': 1},
-	'zero': {'sirou': 1},
+	'zero': {'sirou': 4053},
 	'one': {'won': 1},
 	'two': {'tu': 1},
 	'three': {'tri': 1},
@@ -326,28 +331,28 @@ ms = {
 	'#family': 323, # Austronesian
 	'human': {'manusya': 1},
 	'child': {'ana': 1},
-	'big': {'basar': 1, 'raya': 1, 'gadan': 1},
+	'big': {'basar': 10321, 'raya': 213, 'gadan': 0},
 	'small': {'ketyir': 1},
 	'water': {'air': 1},
-	'1s': {'aku': 1, 'saya': 1},
-	'2s': {'kamu': 1, 'anda': 1},
-	'3s': {'ya': 1, 'dya': 1},
+	'1s': {'aku': 267879, 'saya': 91183},
+	'2s': {'kamu': 46443, 'anda': 114366},
+	'3s': {'ya': 13291, 'dya': 98959},
 	'-PL': {'an': 1}, #??
 	'-GEN': {},
 	'NEG': {'tida': 1},
 	'and': {'dan': 1},
 	'or': {'atau': 1},
-	'zero': {'koson': 1, 'sipar': 1, 'nor': 1, 'nier': 1},
-	'one': {'satu': 1, 'asa': 1, 'tungar': 1, 'eka': 1, 'aat': 1},
-	'two': {'dua': 1, 'dwi': 1},
-	'three': {'tiga': 1, 'teru': 1, 'tari': 1},
-	'four': {'ampat': 1, 'tyator': 1},
-	'five': {'rima': 1, 'pantya': 1},
+	'zero': {'koson': 2245, 'sipar': 3, 'nor': 238, 'nier': 24},
+	'one': {'satu': 22619, 'asa': 10, 'tungar': 0, 'eka': 3, 'aat': 8},
+	'two': {'dua': 8804, 'dwi': 6},
+	'three': {'tiga': 4482, 'teru': 0, 'tari': 2},
+	'four': {'ampat': 1961, 'pat': 64, 'tyator': 134},
+	'five': {'rima': 2414, 'pantya': 2},
 	'six': {'anam': 1},
-	'seven': {'tudyo': 1, 'pitu': 1, 'sapta': 1},
-	'eight': {'rapan': 1, 'sarapan': 1, 'asta': 1},
-	'nine': {'sambiran': 1, 'sarapan': 1, 'nawa': 1},
-	'ten': {'sapulo': 1, 'ekadasa': 1},
+	'seven': {'tudyo': 968, 'pitu': 0, 'sapta': 1},
+	'eight': {'rapan': 42, 'sarapan': 0, 'asta': 2, 'darapan': 730},
+	'nine': {'sambiran': 536, 'sarapan': 0, 'nawa': 1},
+	'ten': {'sapuro': 939, 'ekadasa': 0},
 	'hundred': {'ratus': 1},
 	'thousand': {'ribu': 1},
 	'-ORD': {},
@@ -456,11 +461,11 @@ sw = {
 	'#native': 26,
 	'#total': 150, # ????
 	'#family': 437, # Niger-Congo
-	'human': {'binadamu': 1},
-	'child': {'mtoto': 1, 'mwana': 1},
-	'big': {'kubwa': 1},
-	'small': {'dogo': 1},
-	'water': {'madyi': 1},
+	'human': {'binadamu': 1480+87+8+1, 'mwanadamu': 102+4},
+	'child': {'mtoto': 1019+75+4+1, 'mwana': 259+165+2+1},
+	'big': {'kubwa': 389+325+175+98+39+38+15+14+4+3+1+1},
+	'small': {'dogo': 1138+1035+936+587+378+308+294+188+98+78+45+9+6+5+2+2+1+1+1},
+	'water': {'madyi': 144+1+1+1},
 	'1s': {'mimi': 1, 'ni': 1},
 	'2s': {'wewe': 1, 'u': 1, 'ku': 1},
 	'3s': {'yeye': 1, 'a': 1, 'yu': 1, 'm': 1},
@@ -470,8 +475,8 @@ sw = {
 	'and': {'na': 1},
 	'or': {'au': 1},
 	'zero': {'sipuri': 1}, #????
-	'one': {'modya': 1, 'mosi': 1},
-	'two': {'wiri': 1, 'piri': 1},
+	'one': {'modya': 2147+487+335+142+47+5+2+1+1+1+1+1, 'mosi': 8+3},
+	'two': {'wiri': 44+542+2+284+2+16+2406+9+1, 'piri': 1957+266+1},
 	'three': {'tatu': 1},
 	'four': {'nne': 1},
 	'five': {'tano': 1},
@@ -624,3 +629,70 @@ def pick_words(langs, words, weightFunc, avg=True):
 		out[word] = sorted(candidates, key=fitness, reverse=True)[0]
 	return out
 
+def generate_syllables():
+	initials = ['','m','p','b','n','t','d','s','r','k','g']
+	onglides = [''] # ['','y','w']
+	vowels = ['a','e','i','o','u']
+	finals = [''] # ['', 'n']
+	sylls = set()
+	for i in initials:
+		for g in onglides:
+			for v in vowels:
+				for f in finals:
+					sylls.add(i+g+v+f)
+	return sylls
+
+def generate_candidates():
+	sylls = generate_syllables()
+	cands = sylls.copy()
+	prev = cands
+	new = set()
+	# for s1 in sylls:
+	# 	for s2 in sylls:
+	# 		cands.add(s1+s2)
+	for i in range(2):
+		for c in prev:
+			for s in sylls:
+				new.add(c+s)
+		cands.update(new)
+		prev = new
+		new = set()
+	return cands
+
+def utility(lang, word, cand):
+	def limit_seqlen(l):
+		return l
+		# return l if l < 3 else 3
+	u = 0
+	num = len(lang[word])
+	total = sum(lang[word].values())
+	for wd, wt in lang[word].items():
+		u += (wt / total) * limit_seqlen(max(map(lambda s: (len(s), s), find_common_subsequences(wd, cand)))[0]) / len(wd)
+	return u
+
+def remove_glides_from_langs(langs):
+	for l in langs:
+		for w in l:
+			if w[0] != '#':
+				new = {}
+				for k in l[w]:
+					new[k.replace('y','').replace('w','')] = l[w][k]
+				l[w] = new
+
+def choose_words(langs, words):
+	cands = list(generate_candidates())
+	results = {}
+	def mapfunc(c, w):
+		util = 0
+		for l in langs:
+			util += math.log(l['#family']) * utility(l, w, c)
+		return (util, c)
+
+	for word in words:
+		results[word] = sorted(map(lambda c: mapfunc(c, word), cands), reverse=True)[0][1]
+	return results
+
+# def gismu_utility(langs, word, cand):
+# 	u = 0
+# 	for l in langs:
+# 		if 

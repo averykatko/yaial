@@ -52,9 +52,9 @@ top 10 by total:
 	Persian
 	Punjabi
 
-top 5 families: (top native, top total)
-	Indo-European	Spanish		English
-	Sino-Tibetan	Mandarin	Mandarin
-	Niger-Congo		Yoruba		Swahili
-	Afro-Asiatic	Arabic		Arabic
-	Austronesian	Javanese	Malay
+top 5 families: (top native, top total, #speakers for family)
+	Indo-European	Spanish		English		2914
+	Sino-Tibetan	Mandarin	Mandarin	1268
+	Niger-Congo		Yoruba		Swahili		 437
+	Afro-Asiatic	Arabic		Arabic		 381
+	Austronesian	Javanese	Malay		 323

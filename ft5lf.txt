@@ -1,0 +1,43 @@
+human	san	san	san
+child	tya	tiya	tiya
+big	bda	bada	bada
+small	syal	siyalu	siyalu
+water	sai	sai	sai
+cat	
+dog	
+woman	
+man	
+1s	ai 	ai	ani
+2s	nu	nu	nu
+3s	ya	ya	ya
+-PL	an	an 	(m)an
+-GEN	is	isa	(d)isa
+NEG	ia	ia 	ina	na
+and	an	an 	an 	an
+or	au	au	alu
+zero	sil	silo	silo
+one	woi	woi	oni
+two	ita	ita	ita
+three	tat	tata	tata
+four	pal	pali	pali
+five	ma	ma	ma
+six	sita	sita	sita
+seven	saba?	saba??	saba
+eight	aia	aia	aita
+nine	nain	nain	nain
+ten	sui	sui	sui
+100	la	la	la
+1000	tru	taru	taru
+-ORD	
+this
+that
+wh...
+COP
+QP
+love
+eat
+animal
+plant
+tree
+flower
+
